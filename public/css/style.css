@@ -1,0 +1,137 @@
+@import "fonts.css";
+
+/* ------ GENERAL ------ */
+::selection { color:#000; background:#ffa500; }
+::-webkit-scrollbar { display:none; }
+html::selection { background:rgba(0,0,0,0.0) }
+body { min-width:1100px; font-family:'PlayRegular'; font-size:15px; color:#e5e5e5; background:#444 no-repeat center center fixed; }
+
+.grey   { color:#888; }
+.normal { font-size:18px; }
+.center { text-align:center; }
+.left   { float:left; }
+.right  { float:right; }
+.clear  { clear:both; }
+.show   { display:inline-block; }
+.hide   { display:none; }
+
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+h1 { font-size:20px; font-weight:normal; color:#ffa500; } 
+h2 { font-size:17px; font-weight:normal; color:#ffa500; padding:0; margin:0; }
+
+a { color:#ffa500; text-decoration:none; }
+a:hover { background:#ffa500; color:#000; }
+/* ---- end GENERAL ---- */
+
+/* ------ BODY ------ */
+.hero, .account, .login { width:80%; border:1px solid #555; background:#3d3d3d; padding:20px; margin:100px auto; }
+
+.button { background:#2f2f2f; color:#ffa500; border:1px solid #555; display:block; cursor:pointer; text-decoration:none; }
+.button:hover { background:#ffa500; color:#000; border:1px solid #ffa500; }
+
+/* --- hero --- */
+.hero .name, .hero .role { font-size:18px; line-height:14px; }
+.hero .name { color:#ffa500; }
+.hero .role { color:#666; }
+.hero .bar, .hero .bar-max { height:16px; display:inline-block; 
+    border-radius: @radius;
+    -moz-border-radius: @radius;
+    -webkit-border-radius: @radius;
+}
+.hero .bar { background:#000; margin:0; padding:0 0 0 5px; color:#ffa500; }
+.hero .bar-max { background:#555; margin:4px 0 0 0; font-size:12px; padding:1px; }
+.hero .button { padding:4px 6px; margin:0 0 0 4px; }
+
+.hero h2 { margin:15px 0 8px 0; }
+.hero img.hero-icon-70px { width:60px; height:60px; border:1px solid #ffa500; }
+.hero img.hero-icon-100px { width:100px; height:100px; border:2px solid #ffa500; float:left; margin-right:10px; }
+
+.hero .sort { margin:5px 0 0 5px; padding:0; color:#ffa500; }
+.hero .sort .selected { background:#ffa500; color:#000; border:1px solid #ffa500; }
+.hero .sort .button { display:inline; }
+.hero .sort span { width:40px; display:inline-block; }
+.hero .sort div { margin-bottom:14px; }
+
+.hero .search { margin:0 10px 10px 0; }
+
+.hero-list { list-style:none; padding:0; margin:0; }
+.hero-list a { color:#ffa500; }
+.hero-list a:hover { color:#ffa500; }
+.hero-list li { display:inline-block; margin:4px; }
+.hero-list li .overlay { position:absolute; top:0; bottom:0; left:0; right:0; font-size:8px; background:rgba(0,0,0,0.3); }
+.hero-list li .overlay:hover { background:rgba(0,0,0,0.0); }
+.hero-list li .overlay-dark { position:absolute; top:0; bottom:0; left:0; right:0; background:rgba(0,0,0,0.6); }
+.hero-list li .overlay span { font-size:14px; width:75px; height:75px; }
+
+.ui-tooltip { 
+    font-size:14px;
+    position:absolute;
+    max-width:270px;
+    z-index:9999;
+    padding:5px;
+    background: #2f2f2f;
+    color:#ffa500;
+    box-shadow:0 0 5px #000;
+    border:1px solid #ffa500;
+    /*.border(1px, darken(#ffa500,10%));*/
+}
+.hero-counters { width:30%; border:1px solid #555; background: #2f2f2f; padding:20px; margin:0; }
+.hero-counters .name { font-size:15px; margin-left:5px; }
+.hero-counters .vote { position:absolute; bottom:0; }
+.hero-counters ul { list-style:none; padding:0; margin:0; }
+.hero-counters ul li { margin:0 0 15px 0; position:relative; }
+.hero-counters ul li .add { margin:15px 0 0 0; text-decoration:none; }
+
+/* --- account --- */
+.account h1 { font-size:40px; padding:0; margin:0 0 15px 0; }
+.account p { color:#999; }
+.account a { text-decoration:none; }
+.account a:hover { background:#ffa500; color:#000; }
+.account .bar { position:relative; width:50%; height:30px; background:#000; border:1px solid #ffa500; margin:10px 0 0 50px;
+    border-radius: @radius;
+    -moz-border-radius: @radius;
+    -webkit-border-radius: @radius;
+}
+.account .hover { position:absolute; right:0px; font-size:17px; color:#ffa500; margin:4px 10px 0 0; text-shadow:0 0 4px #000; }
+.account .bar-complete { height:30px; background:#ffa500; display:inline-block; }
+.account .expand { cursor:pointer; font-size:12px; }
+.account ul { list-style:none; margin:10px 0 0 5px; padding:0; }
+.account ul li { color:#777; margin:5px; padding:6px 6px 3px 6px; .border(2px; #555); display:inline-block; }
+.account ul li img { width:40px; height:40px; border:1px solid #ffa500; padding:0; margin:0; }
+
+/* --- form --- */
+form label { float:left; width:100px; }
+form input { width:200px; margin:0; padding:3px; border:1px solid #555; background:#2f2f2f; color:#888; }
+form input:focus { outline-color:#ffa500; }
+form .button { width:auto; display:inline-block; padding:5px 15px; margin:0 5px 0 0; }
+form .controls { margin:0 0 5px 0; }
+/* ---- end BODY ---- */
+
+/* ------ FOOTER ------ */
+nav { height:50px; width:100%; position:fixed; top:0; font-size:12px; border-bottom:1px solid #555; background:#222222; text-align:center; }
+nav ul::selection, nav li::selection, nav li a::selection { color:#ffa500; background:rgba(0,0,0,0.0); }
+nav ul { list-style:none; padding:0; margin:0; }
+nav ul li { display:inline; line-height:50px; }
+nav ul li a { 
+    height:100%; 
+    display:inline-block; 
+    font-family:'SansumiBold'; 
+    color:#ffa500; 
+    text-decoration:none; 
+    padding:0 30px; 
+    -webkit-transition:all 0.2s ease-out; 
+    -moz-transition:all 0.2s ease-out;
+    -o-transition:all 0.2s ease-out;
+    -ms-transition:all 0.2s ease-out;
+    transition:all 0.2s ease-out;
+}
+nav ul li a:hover { color:#000; background:#ffa500; text-decoration:none; }
+/* ---- end FOOTER ---- */
