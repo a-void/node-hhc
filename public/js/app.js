@@ -2,11 +2,11 @@
 
 // Declare app level module which depends on filters, and services
 
-angular.module('myApp', [
-  'myApp.controllers',
-  'myApp.filters',
-  'myApp.services',
-  'myApp.directives'
+angular.module('hhc', [
+  'hhc.controllers',
+  'hhc.filters',
+  'hhc.services',
+  'hhc.directives'
 ]).
 config(function ($routeProvider, $locationProvider) {
   $routeProvider.

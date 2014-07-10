@@ -1,9 +1,35 @@
 !!!
-html(ng-app="myApp")
+html(ng-app="hhc")
   head
     meta(charset='utf8')
+    title Hon Hero Counters
+
+    meta(name='description', content='')
+    meta(name='keywords', content='')
+    meta(charset='utf8')
     base(href='/')
-    title Angular Express Seed App
-    link(rel='stylesheet', href='/css/app.css')
+
+    link(rel='shortcut icon', type='image/x-icon', href='/favicon.ico')
+
+    link(rel='stylesheet', href='/css/normalize.css')
+
+    link(rel='stylesheet', href='/css/style.css')
+    link(rel='stylesheet', href='/css/responsive.css')
+
+    script(type='text/javascript', src='js/lib/jquery.min.js')
+    script(type='text/javascript', src='http://code.jquery.com/ui/1.10.3/jquery-ui.js')
+
+    script(type='text/javascript', src='js/lib/less.js')
   body
-    block body
+    block content 
+
+    block footer
+      footer 
+        nav 
+          ul
+            li
+              a(href='/load') LOAD
+            li
+              a(href='/') HOME
+            li
+              a(href='/hero') HERO LIST

@@ -2,7 +2,7 @@
 
 /* Controllers */
 
-angular.module('myApp.controllers', []).
+angular.module('hhc.controllers', []).
   controller('AppCtrl', function ($scope, $http) {
 
     $http({
