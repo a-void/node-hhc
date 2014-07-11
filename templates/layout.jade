@@ -1,4 +1,4 @@
-!!!
+doctype
 html(ng-app="hhc")
   head
     meta(charset='utf8')
@@ -18,13 +18,10 @@ html(ng-app="hhc")
 
     script(type='text/javascript', src='js/lib/jquery.min.js')
     script(type='text/javascript', src='http://code.jquery.com/ui/1.10.3/jquery-ui.js')
-
-    script(type='text/javascript', src='js/lib/less.js')
   body
-    block content 
-
+    block content
     block footer
-      footer 
+      footer(ng-controller='footer') 
         nav 
           ul
             li
@@ -33,3 +30,6 @@ html(ng-app="hhc")
               a(href='/') HOME
             li
               a(href='/hero') HERO LIST
+            li
+                a(href='/login') {{ login }}
+
