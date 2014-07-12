@@ -29,6 +29,7 @@ if (app.get('env') === 'production') {
 
 // routes
 app.get('/', routes.index);
+app.get('/load', routes.load);
 app.get('/login', routes.login);
 app.get('/register', routes.register);
 app.get('/hero', hero.index);
@@ -40,7 +41,7 @@ app.get('/hero/:name', hero.hero);
 // start
 db
   .sequelize
-  .sync({ force: true })
+  .sync({ force: false })
   .complete(function(err) {
     if (err) {
       throw err[0]

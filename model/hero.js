@@ -11,14 +11,12 @@ module.exports = function (sequelize, DataTypes) {
         speed: DataTypes.INTEGER,
         stuns: DataTypes.INTEGER,
         side: DataTypes.STRING(20),
-        stat: DataTypes.STRING(10)
+        stat: DataTypes.STRING(10),
+        slug: DataTypes.STRING
     }, 
     {
         tableName: 'hero',
         classMethods: {
-            //associate: function(models) {
-            //  Hero.hasMany(models.Task)
-            //}
         }
     })
 
