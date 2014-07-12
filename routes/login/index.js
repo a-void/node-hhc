@@ -1,17 +1,19 @@
 /**
  * GET home page.
  */
-var db = require('../models');
+var db = require('../../models');
 
 exports.index = function(req, res){
+    res.render('index');
+    /*
     db.Hero.findAll().success(function (heroes) {
         res.render('index', {
             title: 'Express',
             heroes: heroes 
         })
     })
+    */
 
-    //res.render('index');
 };
 
 exports.partials = function (req, res) {

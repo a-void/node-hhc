@@ -1,27 +1,20 @@
 'use strict';
 
-/* Controllers */
+/**
+ * Controllers
+ */
+function index($scope, $http) {
+    var user = true;
+    $scope.user = user ? 'someUser' : null;
+    $scope.link = '/hero';
+    $scope.message = 'Hero List';
+}
 
-angular.module('hhc.controllers', []).
-  controller('AppCtrl', function ($scope, $http) {
+function footer($scope, $http, $location) {
+    var user = true;
+    $scope.login = user ? 'ACCOUNT' : 'LOGIN';
+}
 
-    $http({
-      method: 'GET',
-      url: '/api/name'
-    }).
-    success(function (data, status, headers, config) {
-      $scope.name = data.name;
-    }).
-    error(function (data, status, headers, config) {
-      $scope.name = 'Error!'
-    });
+function hero($scope, $http, $routeParams) {
 
-  }).
-  controller('MyCtrl1', function ($scope) {
-    // write Ctrl here
-
-  }).
-  controller('MyCtrl2', function ($scope) {
-    // write Ctrl here
-
-  });
+}
