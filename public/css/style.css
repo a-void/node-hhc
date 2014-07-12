@@ -32,9 +32,9 @@ a:hover { background:#ffa500; color:#000; }
 /* ---- end GENERAL ---- */
 
 /* ------ BODY ------ */
-.hero, .account, .login { width:80%; border:1px solid #555; background:#3d3d3d; padding:20px; margin:100px auto; }
+.hero, .account, .login { width:80%; border:1px solid #555; background:#1b1b1b; padding:20px; margin:100px auto; }
 
-.button { background:#2f2f2f; color:#ffa500; border:1px solid #555; display:block; cursor:pointer; text-decoration:none; }
+.button { background:#111111; color:#ffa500; border:1px solid #555; display:block; cursor:pointer; text-decoration:none; }
 .button:hover { background:#ffa500; color:#000; border:1px solid #ffa500; }
 
 /* --- hero --- */
@@ -77,13 +77,13 @@ a:hover { background:#ffa500; color:#000; }
     max-width:270px;
     z-index:9999;
     padding:5px;
-    background: #2f2f2f;
+    background: #111111;
     color:#ffa500;
     box-shadow:0 0 5px #000;
     border:1px solid #ffa500;
     /*.border(1px, darken(#ffa500,10%));*/
 }
-.hero-counters { width:30%; border:1px solid #555; background: #2f2f2f; padding:20px; margin:0; }
+.hero-counters { width:30%; border:1px solid #555; background: #111111; padding:20px; margin:0; }
 .hero-counters .name { font-size:15px; margin-left:5px; }
 .hero-counters .vote { position:absolute; bottom:0; }
 .hero-counters ul { list-style:none; padding:0; margin:0; }
@@ -109,14 +109,14 @@ a:hover { background:#ffa500; color:#000; }
 
 /* --- form --- */
 form label { float:left; width:100px; }
-form input { width:200px; margin:0; padding:3px; border:1px solid #555; background:#2f2f2f; color:#888; }
+form input { width:200px; margin:0; padding:3px; border:1px solid #555; background:#111111; color:#888; }
 form input:focus { outline-color:#ffa500; }
 form .button { width:auto; display:inline-block; padding:5px 15px; margin:0 5px 0 0; }
 form .controls { margin:0 0 5px 0; }
 /* ---- end BODY ---- */
 
 /* ------ FOOTER ------ */
-nav { height:50px; width:100%; position:fixed; top:0; font-size:12px; border-bottom:1px solid #555; background:#222222; text-align:center; }
+nav { height:50px; width:100%; position:fixed; top:0; font-size:12px; border-bottom:1px solid #555; background:#0e0e0e; text-align:center; }
 nav ul::selection, nav li::selection, nav li a::selection { color:#ffa500; background:rgba(0,0,0,0.0); }
 nav ul { list-style:none; padding:0; margin:0; }
 nav ul li { display:inline; line-height:50px; }
