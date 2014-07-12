@@ -6,12 +6,12 @@ block content
             // init ui-tooltip
             $('.hero-list').tooltip({
                 position: { my: "center top-31", at: "center top" },
-                show: { effect: "fade", delay: 100, }
+                show: { effect: "fade", delay: 0, }
             });
 
             $('.search').tooltip({
                 position: { my: "center top-51", at: "center top" },
-                show: { effect: "fade", delay: 100, }
+                show: { effect: "fade", delay: 0, }
             });
         });
     div.hero(ng-controller='hero')
@@ -41,20 +41,19 @@ block content
         div.clear
 
         ul.hero-list
-            //-
-            //-- each hero in heroes
-            //-{% for hero in heroes %}
-            //-    <li style='position:relative;' 
-            //-    data-hp="{{ hero.getHP }}" data-dmg="{{ hero.getDmg|slice(3,2) }}" data-armor="{{ hero.getArmor }}" data-diff="{{ hero.getDifficulty }}" 
-            //-    title="{{ hero.getName }}" 
-            //-    class="tooltip 
-            //-    {% if hero.getRange > 150 %}range{% else %}melee{% endif %}
-            //-    {% if hero.getSide == 'Legion' %}le{% else %}hb{% endif %}
-            //-    {% if hero.getStat == 'AGI' %}agi{% elseif hero.getStat == 'INT' %}int{% else %}str{% endif %}">
-            //-        <a href="/hero/{{ hero.getName|replace({' ':'+'}) }}">
-            //-            <img class='hero-icon-70px' src="{{ img ~ hero.getName|replace({' ':''})|lower ~ ext }}" />
-            //-            <div class="overlay"></div>
-            //-        </a>
-            //-    </li>
-            //-{% endfor %}
+            each hero in heroes
+                - var cls = (hero.range > 150 ? 'range ' : 'melee '); 
+                - cls += (hero.side === 'Legion' ? 'le ' : 'hb ');
+                - cls += (hero.stat === 'AGI' ? 'agi' : (hero.stat === 'STR' ? 'str' : 'int') );
+
+                li(style='position:relative',
+                    data-hp=hero.hp,
+                    data-dmg=hero.dmg,
+                    data-armor=hero.armor,
+                    data-diff=hero.difficulty,
+                    title=hero.name,
+                    class=cls)
+                    a(href='/hero/' + hero.slug)
+                        img.hero-icon-70px(src='/img/heroes/' + hero.slug + '.jpg')
+                        div.overlay
     script(type='text/javascript', src='/js/core.js')
