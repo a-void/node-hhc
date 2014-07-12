@@ -1,13 +1,12 @@
-
 /**
  * Module dependencies
  */
 
 var express = require('express'),
-  routes = require('./routes'),
-  api = require('./routes/api'),
-  http = require('http'),
-  path = require('path');
+    routes  = require('./routes'),
+    api     = require('./routes/api'),
+    http    = require('http'),
+    path    = require('path');
 
 var app = module.exports = express();
 
@@ -41,7 +40,6 @@ if (app.get('env') === 'production') {
  * Routes
  */
 
-// serve index and view partials
 app.get('/', routes.index);
 app.get('/hero', routes.hero);
 app.get('/login', routes.login);
