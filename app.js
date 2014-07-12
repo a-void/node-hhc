@@ -1,19 +1,11 @@
-/**
- * Module dependencies
- */
-
 var express = require('express'),
     routes  = require('./routes'),
-    api     = require('./routes/api'),
+    hero    = require('./routes/hero'),
     http    = require('http'),
-    path    = require('path');
+    path    = require('path'),
+    db      = require('./model');
 
 var app = module.exports = express();
-
-
-/**
- * Configuration
- */
 
 // all environments
 app.set('port', process.env.PORT || 3000);
@@ -35,28 +27,32 @@ if (app.get('env') === 'production') {
   // TODO
 };
 
-
-/**
- * Routes
- */
-
+// routes
 app.get('/', routes.index);
-app.get('/hero', routes.hero);
 app.get('/login', routes.login);
 app.get('/register', routes.register);
-app.get('/partials/:name', routes.partials);
+app.get('/hero', hero.index);
+app.get('/hero/:name', hero.hero);
+//app.get('*', routes.index); // redirect everything else to index
+//app.get('/partials/:name', routes.partials);
+//app.get('/api/name', api.name); // json api
 
-// JSON API
-app.get('/api/name', api.name);
+// start
+db
+  .sequelize
+  .sync({ force: true })
+  .complete(function(err) {
+    if (err) {
+      throw err[0]
+    } else {
+      http.createServer(app).listen(app.get('port'), function(){
+        console.log('Express server listening on port ' + app.get('port'))
+      })
+    }
+  })
 
-// redirect all others to the index (HTML5 history)
-app.get('*', routes.index);
-
-
-/**
- * Start Server
- */
-
+/*
 http.createServer(app).listen(app.get('port'), function () {
   console.log('Express server listening on port ' + app.get('port'));
 });
+*/
