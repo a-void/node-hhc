@@ -1,0 +1,60 @@
+extends base 
+
+block content
+    script(type='text/javascript').
+        $(document).ready(function() {
+            // init ui-tooltip
+            $('.hero-list').tooltip({
+                position: { my: "center top-31", at: "center top" },
+                show: { effect: "fade", delay: 100, }
+            });
+
+            $('.search').tooltip({
+                position: { my: "center top-51", at: "center top" },
+                show: { effect: "fade", delay: 100, }
+            });
+        });
+    div.hero(ng-controller='hero')
+        div.sort.left
+            div.unselectable
+                span Sort:
+                span.button.sHP HP
+                span.button.sDMG DMG
+                span.button.sARMOR ARMOR
+                span.button.sDIFF DIFFICULTY
+            div.unselectable
+                span Type:
+                span.button.filter.fRange RANGE
+                span.button.filter.fMelee MELEE
+            div.unselectable
+                span Side:
+                span.button.filter.fLegion LEGION
+                span.button.filter.fHellbourne HELLBOURNE
+            div.unselectable
+                span Stat:
+                span.button.filter.fAgi AGI
+                span.button.filter.fInt INT
+                span.button.filter.fStr STR
+        div.search.right
+            form(action='/search', method='post')
+                input#search(type='text', name='_search', placeholder='Search Hero', value='', title='You can search by name, or part of a name: Keeper, SS, TDL')
+        div.clear
+
+        ul.hero-list
+            //-
+            //-- each hero in heroes
+            //-{% for hero in heroes %}
+            //-    <li style='position:relative;' 
+            //-    data-hp="{{ hero.getHP }}" data-dmg="{{ hero.getDmg|slice(3,2) }}" data-armor="{{ hero.getArmor }}" data-diff="{{ hero.getDifficulty }}" 
+            //-    title="{{ hero.getName }}" 
+            //-    class="tooltip 
+            //-    {% if hero.getRange > 150 %}range{% else %}melee{% endif %}
+            //-    {% if hero.getSide == 'Legion' %}le{% else %}hb{% endif %}
+            //-    {% if hero.getStat == 'AGI' %}agi{% elseif hero.getStat == 'INT' %}int{% else %}str{% endif %}">
+            //-        <a href="/hero/{{ hero.getName|replace({' ':'+'}) }}">
+            //-            <img class='hero-icon-70px' src="{{ img ~ hero.getName|replace({' ':''})|lower ~ ext }}" />
+            //-            <div class="overlay"></div>
+            //-        </a>
+            //-    </li>
+            //-{% endfor %}
+    script(type='text/javascript', src='/js/core.js')

@@ -4,6 +4,7 @@
 
 angular.module('hhc', ['hhc.filters', 'hhc.services', 'hhc.directives']).
     config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+        /*
         $routeProvider.
             when('/', {
                 templateUrl: 'partials/index',
@@ -17,4 +18,5 @@ angular.module('hhc', ['hhc.filters', 'hhc.services', 'hhc.directives']).
                 redirectTo: '/'
             });
         $locationProvider.html5Mode(true);
+        */
     }]);

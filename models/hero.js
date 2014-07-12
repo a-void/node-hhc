@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var Hero = sequelize.define('hero', {
+  var Hero = sequelize.define('Hero', {
     name: DataTypes.STRING(50),
     role: DataTypes.STRING(200),
     hp: DataTypes.INTEGER,

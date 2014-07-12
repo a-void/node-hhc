@@ -1,0 +1,15 @@
+extends base
+
+block content
+    div.login
+        h1 Login
+        p.error=error
+        form.form(action='/login', method='post')
+            div.controls
+                label(for='username') Username:
+                input#username(type='text', name='_username', value='')
+            div.controls
+                label(for='password') Password:
+                input#password(type='password', name='_password', value='')
+            input.button(type='submit')
+            a.button(href='/register') Register
